@@ -9,17 +9,6 @@ El valor seleccionado de bicis, debe ser una de las opciones presentadas
 Si algún campo presenta error debe informarse al usuario por medio de un alert.
 */
 function validateForm(){
-  function contrasena (password){
-    var espacios = false;
-    var contenido = 0;
-
-
-    if (password === 123456 || password === 0987654 || password === "password"){
-      alert("Su contraseña es incorrecta, cambie su contraseña.");
-    } else {
-      ;
-    }
-  }
 
   var nombre = document.getElementById('name').value;
   var apellido = document.getElementById('lastname').value;
@@ -30,17 +19,36 @@ function validateForm(){
     var expresion = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/;
     if (!expresion.test(email)){
       alert("La dirección del correo" + email + "no es correcta.");
+    } else {
+
     }
   }
 
   function  validarNombreApellido(nombre,apellido){
     var expresion = /^[a-zA-Z]*$/;
     if (!expresion.test(nombre,apellido)){
+      alert("");
+    } else {
+
+    }
+  }
+
+  function contrasena (password){
+    var validaPassword= password.length<=6;
+    if (validaPassword === 123456 || validaPassword === 0987654 || validaPassword === "password"){
+      alert("Su contraseña es incorrecta, cambie su contraseña.");
+      return false;
+    } else {
 
     }
   }
 
 
+
+  		}else{
+  				document.form1.submit();
+  		}
+  	}
 
 /*
 
@@ -48,7 +56,7 @@ function validateForm(){
     var nombre = document.getElementById("name").value;
     var expresion = new RegExp("^[A-Z]{1,2}\\s\\d{4}\\s([B-D]|[F-H]|[J-N]|[P-T]|[V-Z]){3}$");
 
-    if(expreg.test(nombre))
+    if(expresion.test(nombre))
       alert("La matrícula es correcta");
     else
       alert("La matrícula NO es correcta");
