@@ -1,25 +1,26 @@
 function validateForm(){
-  var nombre = document.getElementById('');
-  var apellido = document.getElementById('');
-  var email = document.getElementById('');
-  var password = document.getElementById('');
+  var nombre = document.getElementById('name').value;
+  var apellido = document.getElementById('lastname').value;
+  var email = document.getElementById('input-email').value;
+  var password = document.getElementById('input-password').value;
+  var tipoDeBici = document.getElementsByClassName("form-control").value;
+  var twitter = document.getElementById('input-social');
 
-
-
-
-  if((nombre.innerHTML).length<6){
-    alert('[ERROR] Ingrese la primera letra de tu nombre con mayúsculas');
+  if(nombre === "" || apellido === "" || email === "" || password === "" || twitter === ""){
+    alert('[ERROR] Todos los campos son obligatorios, excepto el de las bicis');
   }
-  else if () {
-    alert('[ERROR] Ingrese la primera letra de tu apellido con mayúculas');
+  else if (!(/^([A-Z]{1}[a-z]+[\s]*)+$/.test(nombre))) {
+    alert('[ERROR] El campo Nombre debe tener la primera letra en mayúsculas');
   }
-  else if () {
-    alert('[ERROR] Tu correo debería tener un formato similar: name@mundo.com');
+  else if (!(/^([A-Z]{1}[a-z]+[\s]*)+$/.test(nombre))) {
   }
-  else if (((document.getElementById('input-password')).innerHTML).length<6) {
-    alert('[ERROR] Tu password debe tener al menos 6 caracteres.');
+  else if (!(/[\w]+@{1}[\w]+\.[a-z]{2,3}/.test(correo))) {
+    alert('[ERROR] El campo email tiene que tener el siguiente formato: name@domain.com');
   }
-  else if () {
-    alert();
+  else if (password.length<=6 || password === "password" || password === "123456" || password === "098765") {
+    alert('[ERROR] El campo contraseña tiene que tener mínimo 6 caracteres.');
+  }
+  else {
+    alert('[ERROR] Debe rellenar todos los campos');
   }
 }
